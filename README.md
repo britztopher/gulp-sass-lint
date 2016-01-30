@@ -23,3 +23,16 @@ gulp.task('default', function () {
     .pipe(sassLint.failOnError())
 });
 ```
+##Config Path
+```javascript
+'use strict';
+
+var gulp = require('gulp'),
+    sassLint = require('gulp-sass-lint');
+
+gulp.task('default', function () {
+  gulp.src('sass/**/*.s+(a|c)ss')
+    .pipe(sassLint({}, './path/to/config/file.yml'))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
+});
